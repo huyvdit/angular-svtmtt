@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~ngx-toastr/toastr.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.pf_footer_wrap {        
+    color: #ffffff;
+    text-align: center;
+    display: block;
+    padding: 20px 0;
+    background: #343a40!important;
+}
+table {
+    width: 100%;
+}
+.ttl h1 {
+    text-align: center;
+    margin: 25px 0;
+}
+.emp_list_header_search {
+    text-align: right;
+}
+mat-icon.empicn.delete {
+    color: #ff0000;
+}
+mat-icon.empicn.edit {
+    color: green;
+}
+.mat-dialog-actions{
+    float: right;
+}
+.dashboard-wrap h1 {
+    margin: 35px 0;
+}
+.login_err_wrap {
+    margin: 15px 35px;
+}
+.dashboard-wrap {
+    min-height: 800px;
+}
+mat-card .evaluation_cat_inner > mat-expansion-panel {
+    margin-bottom: 15px !important;
+    display: block;
+}
+.evaluation_comment_bx {
+    width: 100%;
+}

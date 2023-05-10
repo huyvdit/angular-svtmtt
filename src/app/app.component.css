@@ -1,0 +1,97 @@
+.pf-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.pf-radio-button {
+  margin: 5px;
+}
+
+.pf-questions-headers-align .mat-expansion-panel-header-title,
+.pf-questions-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 1;
+}
+
+.pf-questions-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+span.q_counter {
+	margin-right: 15px;
+}
+mat-form-field {
+  margin-right: 12px;
+}
+mat-panel-description{
+	text-align: right;
+	display: inline-block;
+}
+.mat-badge span.mat-badge-content {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-right: 15px;
+}
+.sbmt-questions {
+    text-align: right;
+}
+mat-radio-button {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+.mat-action-row {
+	padding: 3px;
+}
+.mat-expansion-panel {
+    background: #b7b7b7;
+}
+.mat-expansion-panel.mat-expanded {
+	background: #ffffff;
+}
+mat-card.mat-card {
+    background: #dcdcdc;
+}
+.mat-expansion-panel-header-title {
+    font-size: 18px;
+    vertical-align: middle;
+    display: table-cell;
+}
+.mat-badge {
+    position: relative;
+    top: 6px;
+}
+mat-icon {
+    color: #4caf50;
+}
+mat-radio-button .mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple{
+  background-color: #4caf50 !important;
+}
+mat-radio-button .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+  border-color: #4caf50 !important;
+}
+span.mat-badge-content {
+    background:#212121b8;
+} 
+.question_inner {
+    margin-bottom: 20px;
+}
+mat-expansion-panel {
+    margin: 0 !important;
+}
+.pf-tooltip-blue {
+  background: #007bff;
+}
+.progress-ttl {
+  font-size: 17px;
+}
+.usricn {
+  color: #212121b8 !important;
+}
+.mat-progress-bar-background {
+  fill: #828eda !important;
+}

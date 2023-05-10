@@ -1,0 +1,69 @@
+<div class="questions_wrap" *ngIf="questions">
+
+	<form #questionForm="ngForm" name="form" (ngSubmit)="questionForm.form.valid && onSubmitQuestions(questionForm)">
+		<mat-card>
+			<mat-accordion class="pf-questions-headers-align">
+
+				<div class="evaluation_cat_inner" *ngFor="let evaluation of questions; let j=index">
+
+					<mat-expansion-panel [expanded]="(j == 0) ? true : false" (opened)="setStep(0, evaluation.id)">
+						<mat-expansion-panel-header>
+							<mat-panel-title>
+								<span matBadge="{{j+1}}" matBadgeOverlap="false"></span> {{evaluation.category}}
+					</mat-panel-title>
+		
+				</mat-expansion-panel-header>
+	
+	<div class="question_inner" *ngFor="let question of evaluation.questions; let i=index">
+	  <mat-expansion-panel [ngClass]="{'is-has-error': questionForm.submitted && questionForm.invalid}"  [expanded]="step === i" (opened)="setStep(i)" hideToggle>
+	    <mat-expansion-panel-header>
+	      <mat-panel-title>
+	       <span matBadge="{{i+1}}" matBadgeOverlap="false"></span> {{question.question}}
+	      </mat-panel-title>
+	      <mat-panel-description [ngClass]="{'is-selected-option': isSelectedVal == question.id}">
+						
+						<mat-icon class="usricn" *ngIf="question_sel.invalid || comment_bx.invalid" matTooltip="Answer Not Selected"
+						matTooltipClass="pf-tooltip-blue">account_circle</mat-icon>
+		        <mat-icon *ngIf="question_sel.valid && comment_bx.valid" matTooltip="Answer Selected"
+						matTooltipClass="pf-tooltip-blue">done_outline</mat-icon>
+	      </mat-panel-description>
+			</mat-expansion-panel-header>
+			
+			<div class="model_inner_wrap" [ngModelGroup]="question.id">
+
+	    <mat-radio-group [name]="question.id" #question_sel="ngModel" [ngModel]="((i == 0) ? firstOptionId : '')"   aria-labelledby="pf-radio-group-label" required
+		class="pf-radio-button">
+	   
+		    <mat-radio-button class="pf-q-radio-button" *ngFor="let option of question.option; let k=index" [value]="option.id" #cur_radio (change)="questionRadioChange($event, k, question.id)">{{option.option_name}}
+	  		</mat-radio-button>
+			</mat-radio-group>
+
+			
+			<mat-form-field class="evaluation_comment_bx">
+				
+				<input matInput placeholder="Please enter Comment"  id="cmt{{question.id}}"  name="comment_bx" #comment_bx="ngModel" ngModel [required]="question.commentsRequired.indexOf(question_sel.value)>-1">
+			</mat-form-field>
+
+		</div>
+
+	    <mat-action-row>
+	    <button mat-button *ngIf="i != 0" color="warn" (click)="prevStep()" matTooltip="Goto Previous Question"
+			matTooltipClass="pf-tooltip-blue">Previous</button>
+	    <button mat-button *ngIf="i != 19" color="primary" (click)="nextStep()" matTooltip="Goto Next Question"
+			matTooltipClass="pf-tooltip-blue">Next</button>
+	    </mat-action-row>
+		</mat-expansion-panel>
+		</div>
+
+	</mat-expansion-panel>
+		
+	</div>
+
+	</mat-accordion>
+	<div class="sbmt-questions">
+		<button type="submit" color="primary" mat-raised-button matTooltip="Submit Performance"
+		 [disabled]="!questionForm.valid">Submit Performance</button>
+	</div>
+	</mat-card>
+	</form>
+</div>
